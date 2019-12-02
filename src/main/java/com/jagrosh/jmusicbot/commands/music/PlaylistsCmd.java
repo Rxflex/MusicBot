@@ -30,7 +30,7 @@ public class PlaylistsCmd extends MusicCommand
     {
         super(bot);
         this.name = "playlists";
-        this.help = "shows the available playlists";
+        this.help = "отображает список всевозможных плейлистов";
         this.aliases = bot.getConfig().getAliases(this.name);
         this.guildOnly = true;
         this.beListening = false;
