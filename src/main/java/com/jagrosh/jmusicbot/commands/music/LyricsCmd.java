@@ -38,7 +38,7 @@ public class LyricsCmd extends MusicCommand
         super(bot);
         this.name = "lyrics";
         this.arguments = "[song name]";
-        this.help = "shows the lyrics to the currently-playing song";
+        this.help = "показывает лирику к текущему трэку";
         this.aliases = bot.getConfig().getAliases(this.name);
         this.botPermissions = new Permission[]{Permission.MESSAGE_EMBED_LINKS};
         this.bePlaying = true;
@@ -57,7 +57,7 @@ public class LyricsCmd extends MusicCommand
         {
             if(lyrics == null)
             {
-                event.replyError("Lyrics for `" + title + "` could not be found!");
+                event.replyError("Лирика для трэка `" + title + "` не найдена!");
                 return;
             }
 
@@ -67,7 +67,7 @@ public class LyricsCmd extends MusicCommand
                     .setTitle(lyrics.getTitle(), lyrics.getURL());
             if(lyrics.getContent().length()>15000)
             {
-                event.replyWarning("Lyrics for `" + title + "` found but likely not correct: " + lyrics.getURL());
+                event.replyWarning("Лирика для `" + title + "` найдена но выглядит не правильной: " + lyrics.getURL());
             }
             else if(lyrics.getContent().length()>2000)
             {
